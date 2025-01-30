@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+#filter {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#filter button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#filter button:hover {
+    background-color: #555;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.post {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.post h2 {
+    margin: 0;
+}
+
+.post a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+/* home */
+#home p {
+    margin-left: 20px;  /* Moves the paragraph away from the left edge */
+    padding-left: 10px; /* Adds extra space inside the paragraph */
+    max-width: 700px;   /* Keeps the text from stretching too wide */
+}
+
+/* work */
+#work {
+    max-width: 800px;  /* Limits the width for better readability */
+    margin: 0 auto;  /* Centers the section horizontally */
+    padding: 20px;  /* Adds space inside the section */
+    text-align: center;  /* Centers text within */
+}
+
+#work h1,
+#work p {
+    text-align: center;  /* Ensures text is not left-aligned */
+    margin: 0 auto;  /* Centers text properly */
+    max-width: 700px;  /* Ensures text isn't too wide */
+}
+
+
