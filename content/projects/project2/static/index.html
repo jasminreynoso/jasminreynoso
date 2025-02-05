@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGram Text Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        select, input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-selection {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .book-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 200px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        #results {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NGram Text Generator</h1>
+        
+        <form id="ngramForm">
+            <div class="form-group">
+                <label>Select up to 3 books:</label>
+                <div class="book-selection">
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="crime.txt" id="crime">
+                        <label for="crime">Crime and Punishment</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="edgar.txt" id="edgar">
+                        <label for="edgar">Edgar Allan Poe Collection</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="pride.txt" id="pride">
+                        <label for="pride">Pride and Prejudice</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="dracula.txt" id="dracula">
+                        <label for="dracula">Dracula</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="locke.txt" id="locke">
+                        <label for="locke">John Locke's Essay</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="nietszche.txt" id="nietszche">
+                        <label for="nietszche">Beyond Good and Evil</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="quixote.txt" id="quixote">
+                        <label for="quixote">Don Quixote</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="republic.txt" id="republic">
+                        <label for="republic">The Republic</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="romeo.txt" id="romeo">
+                        <label for="romeo">Romeo and Juliet</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="war.txt" id="war">
+                        <label for="war">War and Peace</label>
+                    </div>
+                    <div class="book-checkbox">
+                        <input type="checkbox" name="books" value="women.txt" id="women">
+                        <label for="women">Little Women</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="n">N-gram Size (1-5):</label>
+                <input type="number" id="n" name="n" min="1" max="5" value="2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sentences">Number of Sentences to Generate (1-10):</label>
+                <input type="number" id="sentences" name="sentences" min="1" max="10" value="3" required>
+            </div>
+
+            <button type="submit">Generate Text</button>
+        </form>
+
+        <div id="loading" class="loading">Generating text...</div>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('ngramForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const books = Array.from(document.querySelectorAll('input[name="books"]:checked'))
+                .map(cb => cb.value);
+            
+            if (books.length === 0 || books.length > 3) {
+                alert('Please select 1-3 books');
+                return;
+            }
+
+            const n = document.getElementById('n').value;
+            const sentences = document.getElementById('sentences').value;
+            
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').textContent = '';
+
+            try {
+                const response = await axios.post('https://jasreynoso.pythonanywhere.com/generate', {
+                    books,
+                    n,
+                    sentences
+                });
+                
+                document.getElementById('results').textContent = response.data.text;
+            } catch (error) {
+                document.getElementById('results').textContent = 'Error generating text. Please try again.';
+                console.error('Error:', error);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        });
+
+        // Limit book selection to 3
+        document.querySelectorAll('input[name="books"]').forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checked = document.querySelectorAll('input[name="books"]:checked');
+                if (checked.length > 3) {
+                    cb.checked = false;
+                    alert('You can select up to 3 books');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

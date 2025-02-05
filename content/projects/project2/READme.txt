@@ -1,1 +1,1 @@
-How to Sage My Apartment Most Efficiently: an homage to the Graphs and Algorithms Class I took: Tech Stack
+Random Sentence Generation: choose from classics to build an n-gram model: Python
