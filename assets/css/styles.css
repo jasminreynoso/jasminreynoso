@@ -168,11 +168,3 @@ h1 {
     border-radius: 4px;
 }
 
-:root {
-    --bg-primary: #1a1a2e;
-    --bg-secondary: #242439;
-    --accent-primary: #bb86fc;
-    --text-primary: #ffffff;
-    --hover-color: #cf9fff;
-}
- 
