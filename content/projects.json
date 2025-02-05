@@ -7,9 +7,9 @@
     },
     {
         "folder": "project2",
-        "title": "How to Sage My Apartment Most Efficiently",
-        "summary": "An homage to the Graphs and Algorithms Class I took.",
-        "tech_stack": "Tech Stack Coming Soon"
+        "title": "Random Sentence Generator",
+        "summary": "Using classic literature to create random sentences.",
+        "tech_stack": "Ngram modeling with Python"
     }
 ]
 
