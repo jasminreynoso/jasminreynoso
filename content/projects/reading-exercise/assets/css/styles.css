@@ -1,25 +1,28 @@
-
 .game-content {
     display: flex;
-    align-items: flex-start; /* Aligns items from the top */
-    justify-content: center; /* Centers content horizontally */
-    gap: 20px; /* Adds space between passage and word bank */
-    max-width: 900px; /* Limits width to keep things compact */
-    margin: 20px auto; /* Centers the block on the page */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
 }
 
 .left-container {
-    flex: 2; /* Makes passage take up more space */
-    background-color: #f8f8f8;
+    flex: 2;
+    background-color: var(--bg-secondary);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(187, 134, 252, 0.1);
 }
 
 .right-container {
-    flex: 1; /* Makes the word bank smaller */
-    background-color: #eee;
+    flex: 1;
+    background-color: var(--bg-secondary);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(187, 134, 252, 0.1);
 }
 
 .word-bank ul {
@@ -28,14 +31,65 @@
 }
 
 .word-bank li {
-    background: #ddd;
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 5px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 6px;
     text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(187, 134, 252, 0.1);
+}
+
+.word-bank li:hover {
+    background-color: rgba(187, 134, 252, 0.1);
+    transform: translateY(-2px);
 }
 
 .game-controls {
     text-align: center;
     margin-top: 20px;
+}
+
+.game-controls button {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.game-controls button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .game-content {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .left-container,
+    .right-container {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.left-container,
+.right-container {
+    animation: fadeIn 0.5s ease-out;
 }
