@@ -168,5 +168,11 @@ h1 {
     border-radius: 4px;
 }
 
-/* Add this to your HTML head */
-/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> */
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #242439;
+    --accent-primary: #bb86fc;
+    --text-primary: #ffffff;
+    --hover-color: #cf9fff;
+}
+ 
