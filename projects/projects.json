@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "title": "Interactive Calculator",
+      "dateAdded": "2024-01-10",
+      "techUsed": ["HTML5", "CSS3", "JavaScript"],
+      "folderName": "project-1"
+    },
+    {
+      "title": "Todo List Manager",
+      "dateAdded": "2024-02-05",
+      "techUsed": ["JavaScript", "LocalStorage", "CSS3"],
+      "folderName": "project-2"
+    },
+    {
+      "title": "Color Palette Generator",
+      "dateAdded": "2024-02-18",
+      "techUsed": ["JavaScript", "CSS3", "API"],
+      "folderName": "project-3"
+    },
+    {
+      "title": "Drawing Canvas",
+      "dateAdded": "2024-03-02",
+      "techUsed": ["HTML5 Canvas", "JavaScript", "CSS3"],
+      "folderName": "project-4"
+    },
+    {
+      "title": "Pomodoro Timer",
+      "dateAdded": "2024-03-20",
+      "techUsed": ["JavaScript", "CSS3", "HTML5"],
+      "folderName": "project-5"
+    },
+    {
+      "title": "Photo Music Analyzer",
+      "dateAdded": "2024-04-05",
+      "techUsed": ["JavaScript", "YouTube API", "File Upload", "CSS3"],
+      "folderName": "project-6"
+    },
+    {
+      "title": "Password Generator",
+      "dateAdded": "2024-04-22",
+      "techUsed": ["JavaScript", "HTML5", "CSS3"],
+      "folderName": "project-7"
+    },
+    {
+      "title": "Unit Converter",
+      "dateAdded": "2024-05-08",
+      "techUsed": ["JavaScript", "HTML5", "CSS3"],
+      "folderName": "project-8"
+    }
+  ]
+}

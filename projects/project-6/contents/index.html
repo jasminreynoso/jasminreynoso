@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Music Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Photo Music Analyzer</h1>
+        <p class="subtitle">Upload a photo and discover the perfect song match!</p>
+        
+        <div class="upload-section" id="uploadSection">
+            <input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="handlePhotoUpload(event)">
+            <label for="photoInput" class="upload-btn">
+                📷 Choose Photo
+            </label>
+            <div id="preview" class="preview"></div>
+        </div>
+        
+        <div class="analyzing" id="analyzing" style="display: none;">
+            <div id="analyzingPhoto" class="analyzing-photo"></div>
+            <div class="spinner"></div>
+            <p>Analyzing your photo...</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        
+        <div class="result" id="result" style="display: none;">
+            <h2>Your Perfect Match!</h2>
+            <div class="result-content">
+                <div class="photo-result">
+                    <div id="photoContainer"></div>
+                </div>
+                <div id="songEmbed"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

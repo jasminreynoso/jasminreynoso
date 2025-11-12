@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pixel Art Generator</h1>
+        <div class="controls">
+            <label>
+                Grid Size: 
+                <input type="number" id="gridSize" value="16" min="4" max="64" onchange="createGrid()">
+            </label>
+            <input type="color" id="colorPicker" value="#000000">
+            <button onclick="fillCanvas()">Fill All</button>
+            <button onclick="clearCanvas()">Clear</button>
+            <button onclick="saveCanvas()">Save</button>
+        </div>
+        <div class="canvas-container">
+            <div id="pixelGrid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
