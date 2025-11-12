@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "title": "Getting Started with Web Development",
+      "dateAdded": "2024-01-15",
+      "textFile": "post1.txt"
+    },
+    {
+      "title": "Understanding CSS Grid and Flexbox",
+      "dateAdded": "2024-02-03",
+      "textFile": "post2.txt"
+    },
+    {
+      "title": "JavaScript Best Practices",
+      "dateAdded": "2024-02-20",
+      "textFile": "post3.txt"
+    },
+    {
+      "title": "Building Responsive Websites",
+      "dateAdded": "2024-03-10",
+      "textFile": "post4.txt"
+    },
+    {
+      "title": "Introduction to React Hooks",
+      "dateAdded": "2024-03-25",
+      "textFile": "post5.txt"
+    },
+    {
+      "title": "Design Principles for Web",
+      "dateAdded": "2024-04-12",
+      "textFile": "post6.txt"
+    },
+    {
+      "title": "Website Performance Optimization",
+      "dateAdded": "2024-04-28",
+      "textFile": "post7.txt"
+    },
+    {
+      "title": "Version Control with Git",
+      "dateAdded": "2024-05-15",
+      "textFile": "post8.txt"
+    }
+  ]
+}
+

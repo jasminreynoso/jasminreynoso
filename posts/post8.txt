@@ -1,0 +1,16 @@
+Git is essential for modern development, but working with Git in a team requires understanding workflow strategies. A good Git workflow helps teams collaborate effectively, reduces conflicts, and maintains a clean project history.
+
+One of the most popular workflows is Git Flow. It uses different branches for different purposes: main for production code, develop for integration, feature branches for new work, release branches for preparing releases, and hotfix branches for urgent fixes.
+
+For smaller teams, a simpler workflow might be better. The GitHub Flow is straightforward: create a feature branch from main, make your changes, push the branch, open a pull request, get it reviewed, merge it, and deploy. This works well for continuous deployment.
+
+Branch naming conventions are important. Use descriptive names like feature/user-authentication or fix/login-bug. Consistent naming makes it easy to understand what work is happening on each branch.
+
+Pull requests (or merge requests) are where code review happens. They're not just for merging code - they're a communication tool. Use clear descriptions, reference related issues, and request specific reviewers. Review feedback should be constructive and helpful.
+
+Commits should be atomic and well-described. Write clear commit messages that explain what and why, not just what. Small, frequent commits are easier to review and understand than large, infrequent ones.
+
+Handling merge conflicts is part of team development. When conflicts arise, communicate with your team, understand the changes on both sides, and resolve conflicts thoughtfully. Regular pulls from the main branch help minimize conflicts.
+
+Remember, Git workflows should serve your team's needs. Start simple, and evolve your workflow as your team grows. The goal is to make collaboration smoother, not to follow a workflow for its own sake.
+

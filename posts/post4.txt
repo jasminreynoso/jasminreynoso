@@ -1,0 +1,14 @@
+Async/await is a modern JavaScript feature that makes working with asynchronous code much more readable and easier to reason about. It's built on top of Promises and provides a cleaner syntax for handling asynchronous operations.
+
+Before async/await, developers used callbacks and Promises with .then() chains. While Promises were an improvement over callbacks, they could still lead to nested code that was hard to read. Async/await solves this by allowing you to write asynchronous code that looks synchronous.
+
+To use async/await, you mark a function with the async keyword. Inside that function, you can use the await keyword before any Promise. When JavaScript encounters await, it pauses execution of that function until the Promise resolves, then continues with the result.
+
+Error handling with async/await is straightforward - you use try/catch blocks, just like with synchronous code. This is much cleaner than chaining .catch() methods.
+
+One important thing to remember: async functions always return a Promise. Even if you return a regular value, it gets wrapped in a Promise. This means you can use .then() or await when calling an async function.
+
+Async/await works great with Promise.all() for running multiple async operations in parallel. Instead of waiting for operations sequentially, you can start them all and await them together, significantly improving performance.
+
+The key to mastering async/await is understanding that it's syntactic sugar over Promises. Once you understand Promises, async/await becomes intuitive. Practice with real-world examples, and you'll quickly see how much cleaner your code becomes.
+

@@ -1,0 +1,51 @@
+[
+    {
+        "id": "post1",
+        "title": "Getting Started with Modern Web Development",
+        "date": "2024-01-15",
+        "tags": ["Web Development", "JavaScript", "Tutorial"]
+    },
+    {
+        "id": "post2",
+        "title": "Building Your First API",
+        "date": "2024-02-03",
+        "tags": ["Backend", "API", "Node.js"]
+    },
+    {
+        "id": "post3",
+        "title": "CSS Grid vs Flexbox: When to Use What",
+        "date": "2024-02-20",
+        "tags": ["CSS", "Design", "Frontend"]
+    },
+    {
+        "id": "post4",
+        "title": "Understanding Async/Await in JavaScript",
+        "date": "2024-03-10",
+        "tags": ["JavaScript", "Async", "Programming"]
+    },
+    {
+        "id": "post5",
+        "title": "Responsive Design Best Practices",
+        "date": "2024-03-25",
+        "tags": ["CSS", "Responsive", "UX"]
+    },
+    {
+        "id": "post6",
+        "title": "Introduction to React Hooks",
+        "date": "2024-04-05",
+        "tags": ["React", "JavaScript", "Frontend"]
+    },
+    {
+        "id": "post7",
+        "title": "Optimizing Website Performance",
+        "date": "2024-04-18",
+        "tags": ["Performance", "Web Development", "Optimization"]
+    },
+    {
+        "id": "post8",
+        "title": "Git Workflow for Teams",
+        "date": "2024-05-02",
+        "tags": ["Git", "Version Control", "Collaboration"]
+    }
+]
+
