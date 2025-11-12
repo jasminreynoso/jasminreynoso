@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmin - About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spiral-cat-container">
+            <div class="pixel-cat" id="spiral-cat"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cat-cursor"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Jasmin</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content about-page">
+        <div class="about-container">
+            <!-- Large Photo at Top -->
+            <div class="about-photo-container">
+                <img src="sample.img" alt="Jasmin" class="about-main-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="photo-placeholder" style="display: none;">
+                    <div class="placeholder-text">Your Photo Here</div>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="about-content-wrapper">
+                <div class="about-text-content">
+                    <h1 class="about-title">Hi, I am Jasmin.</h1>
+                    <p class="about-bio">
+                        This is where your bio text will go. You can write about your background, interests, 
+                        experiences, and what drives you.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alternating Pattern Section -->
+            <div class="about-pattern-section">
+                <!-- Row 1: Text left, Image right -->
+                <div class="about-pattern-row">
+                    <div class="about-pattern-text">
+                        <p>This is sample text on the left side. You can write about your experiences, interests, or anything you'd like to share with visitors. Here you can elaborate on your background, what drives you, and what makes you unique. Share your journey, your passions, and the things that inspire you. This space allows you to connect with visitors on a personal level and give them insight into who you are beyond just your work or projects.</p>
+                        <p>Continue writing about your interests, hobbies, or professional experiences. You might want to mention your education, career path, or personal philosophy. The more you share, the more visitors can understand your perspective and what you bring to the table. Feel free to be authentic and genuine in your writing.</p>
+                    </div>
+                    <div class="about-pattern-image-small image-right">
+                        <div class="pattern-image-placeholder">📷</div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Image left (under text), Text right -->
+                <div class="about-pattern-row">
+                    <div class="about-pattern-image-small image-left">
+                        <div class="pattern-image-placeholder">📷</div>
+                    </div>
+                    <div class="about-pattern-text">
+                        <p>This is sample text on the right side. Continue sharing your story, background, or any information you want visitors to know about you. You can discuss your skills, achievements, or goals. Talk about what you're working on currently, what you're learning, or what you hope to accomplish in the future. This is your space to tell your story in your own words.</p>
+                        <p>You might want to mention specific projects you're proud of, challenges you've overcome, or lessons you've learned along the way. Share what motivates you, what you're passionate about, and what you're looking forward to. This helps visitors understand not just what you do, but why you do it and where you're headed.</p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Text left, Image right -->
+                <div class="about-pattern-row">
+                    <div class="about-pattern-text">
+                        <p>More text on the left side. This alternating pattern creates visual interest and allows you to showcase both images and text content effectively. You can use this space to dive deeper into specific topics, share anecdotes, or provide more context about your work and interests. The layout helps break up long blocks of text and keeps the page engaging.</p>
+                        <p>Consider adding details about your creative process, your approach to problem-solving, or what you value most in your work and life. You could also discuss collaborations, mentors who have influenced you, or experiences that have shaped your perspective. The goal is to paint a complete picture of who you are and what you stand for.</p>
+                    </div>
+                    <div class="about-pattern-image-small image-right">
+                        <div class="pattern-image-placeholder">📷</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

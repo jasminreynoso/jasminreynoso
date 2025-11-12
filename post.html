@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Jasmin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spiral-cat-container">
+            <div class="pixel-cat" id="spiral-cat"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cat-cursor"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Jasmin</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content blog-page">
+        <div class="blog-post-full">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+            <h1 id="post-title" class="blog-post-title"></h1>
+            <div id="post-date" class="blog-post-date"></div>
+            <div id="post-content" class="blog-post-content-full"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+        const title = urlParams.get('title');
+        const date = urlParams.get('date');
+
+        // Set title and date
+        document.getElementById('post-title').textContent = decodeURIComponent(title || 'Blog Post');
+        document.getElementById('post-date').textContent = decodeURIComponent(date || '');
+
+        // Load post content
+        if (file) {
+            fetch(`posts/txts/${file}`)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('post-content').innerHTML = text.replace(/\n/g, '<br>');
+                })
+                .catch(error => {
+                    document.getElementById('post-content').textContent = 'Error loading post content.';
+                });
+        }
+    </script>
+</body>
+</html>
+

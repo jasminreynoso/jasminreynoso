@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmin - Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spiral-cat-container">
+            <div class="pixel-cat" id="spiral-cat"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cat-cursor"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Jasmin</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content blog-page">
+        <h1 class="page-title">Blog</h1>
+        <div id="blog-container" class="content-container">
+            <!-- Blog posts will be loaded here -->
+        </div>
+        <div class="pagination">
+            <button id="prev-btn" class="pagination-btn" style="display: none;">← Back</button>
+            <button id="next-btn" class="pagination-btn" style="display: none;">Next →</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>
+

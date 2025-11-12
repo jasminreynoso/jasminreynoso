@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Jasmin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spiral-cat-container">
+            <div class="pixel-cat" id="spiral-cat"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cat-cursor"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Jasmin</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content blog-page">
+        <div class="blog-post-full">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+            <h1 id="project-title" class="blog-post-title"></h1>
+            <div id="project-date" class="blog-post-date"></div>
+            <div id="project-tech" class="project-tech"></div>
+            <div id="project-demo" style="margin: 2rem 0;"></div>
+            <div id="project-content" class="blog-post-content-full"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const folder = urlParams.get('folder');
+        const title = urlParams.get('title');
+        const date = urlParams.get('date');
+        const tech = urlParams.get('tech');
+
+        // Set title, date, and tech
+        document.getElementById('project-title').textContent = decodeURIComponent(title || 'Project');
+        document.getElementById('project-date').textContent = decodeURIComponent(date || '');
+        
+        if (tech) {
+            const techArray = JSON.parse(decodeURIComponent(tech));
+            const techTags = techArray.map(t => `<span class="tech-tag">${t}</span>`).join('');
+            document.getElementById('project-tech').innerHTML = techTags;
+        }
+
+        // Load project demo
+        if (folder) {
+            const demoDiv = document.getElementById('project-demo');
+            demoDiv.innerHTML = `
+                <a href="projects/${folder}/contents/index.html" target="_blank" 
+                   style="display: inline-block; padding: 15px 30px; background: var(--color-1); color: var(--color-3); 
+                          text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;
+                          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                    🚀 Try Live Demo
+                </a>
+                <iframe src="projects/${folder}/contents/index.html" 
+                        style="width: 100%; height: 600px; border: 2px solid var(--color-5); border-radius: 12px; 
+                               margin-top: 2rem; background: white;" 
+                        frameborder="0"></iframe>
+            `;
+            
+            // Load project content from README
+            fetch(`projects/${folder}/contents/README.md`)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('project-content').innerHTML = text.replace(/\n/g, '<br>');
+                })
+                .catch(error => {
+                    document.getElementById('project-content').innerHTML = 
+                        '<p>An interactive demo project showcasing modern web development techniques.</p>';
+                });
+        }
+    </script>
+</body>
+</html>
+
