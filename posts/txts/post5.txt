@@ -1,0 +1,10 @@
+React Hooks revolutionized how we write React components by allowing us to use state and other React features in functional components. Before hooks, you needed class components for state management.
+
+The useState hook is the most commonly used hook. It lets you add state to functional components. Simply call useState with an initial value, and it returns an array with the current state and a function to update it.
+
+useEffect is another essential hook that handles side effects like data fetching, subscriptions, or manually changing the DOM. It runs after every render by default, but you can control when it runs with a dependency array.
+
+Other important hooks include useContext for accessing context, useReducer for complex state logic, and useMemo and useCallback for performance optimization.
+
+Hooks make React code more reusable and easier to understand. They follow a simple rule: only call hooks at the top level of your component, not inside loops, conditions, or nested functions.
+

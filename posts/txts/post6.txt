@@ -1,0 +1,12 @@
+Good design is about more than just making things look pretty. It's about creating intuitive, accessible, and enjoyable user experiences. Here are some fundamental design principles for the web.
+
+Visual hierarchy guides users' attention to the most important elements. Use size, color, contrast, and spacing to create clear relationships between elements. Headings should be larger than body text, and important actions should stand out.
+
+Consistency is key. Use consistent colors, fonts, spacing, and interaction patterns throughout your site. This creates a cohesive experience and helps users learn how to navigate your site quickly.
+
+Whitespace, or negative space, is crucial for readability and visual breathing room. Don't be afraid of empty space - it helps content stand out and makes your design feel more professional.
+
+Accessibility should never be an afterthought. Ensure sufficient color contrast, provide alt text for images, use semantic HTML, and make your site keyboard navigable. Good design is inclusive design.
+
+Finally, keep it simple. Remove unnecessary elements and focus on what truly matters. Simplicity often leads to better usability and a more elegant design.
+
